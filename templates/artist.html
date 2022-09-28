@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS v5.2.0-beta1 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"  integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="/templates/css/style.css">
+    <link rel="shortcut icon" href="/templates/img/itunes.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;600;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=68a86058-3838-4f4e-85f7-b68b5af80c7f&lang=en_US" type="text/javascript"></script>
+    <script src="/templates/js/geo.js" type="text/javascript"></script>
+    <title>{{.Name}}</title>
+</head>
+<body>
+    <!-- -------------------NAVBAR----------------- -->
+    <nav class="header navbar navbar-expand p-lg-5 ms-5 me-5"  >
+        <div class="container-fluid">
+            <img src="/templates/img/logo.png" id="navImg">
+            <a href="/" class="navbar-brand ps-lg-3"  >GROUPIE-TRACKER</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse nav_links">
+                <ul class="navbar-nav ms-auto me-5";>
+                    <li class="nav-item"><a href="https://01.alem.school/" class="nav-link" >01</a></li>
+                    <li class="nav-item"><a href="https://01.alem.school/git/user/login" class="nav-link">Git</a></li>
+                    <li class="nav-item"><a href="https://github.com/" class="nav-link">Github</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- -----------------------CONTENT-------------------------- -->
+    <div class="container d-flex">
+        <div class="img_card" >
+            <img src="{{.Image}}">
+        </div>
+        <div class="about_group">
+            <div class="name">
+                <p><b>Name: </b>{{.Name}}</p>
+            </div>
+            <div class="Members">
+                <p><b>Members: </b></p>
+                {{range .Members}}
+                    <ul>
+                        <li>{{.}}</li>
+                    </ul>
+                {{end}}
+            </div>
+            <div class="creation_date">
+                <p><b>Creation Date: </b>{{.CreationDate}}</p>
+            </div>
+            <div class="first_album">
+                <p><b>First Album: </b>{{.FirstAlbum}}</p> 
+            </div>
+        </div>
+        <div class="card_table">
+            <table>
+                <thead > 
+                    <th>Location</th>
+                    <th>Date</th>
+                </thead>
+                <tbody>
+                {{range $location, $dates := .DatesLocations}}
+                    <tr>
+                        <td class="artistCities">
+                            {{$location}} 
+                        </td>
+                        <td >
+                            {{range $dates}}
+                                {{.}}<br>
+                            {{end}}
+                        </td>
+                    </tr>
+                {{end}}
+                </tbody>
+            </table>
+        </div> 
+    </div>
+    <div id="geolocation" class="geolocation"></div>
+    <!-- -----------------------FOOTER-------------------------- -->
+    <footer class="bg-dark">
+        <div class="media-links">
+            <div class="facebook">
+                <a href="https://facebook.com/">
+                    <img src="/templates/img/f.png" alt="icon">
+                </a>
+            </div>
+            <div class="twitter">
+                <a href="https://twitter.com/">
+                    <img src="/templates/img/t.png" alt="icon">
+                </a>
+            </div>
+            <div class="instagram">
+                <a href="https://www.instagram.com/">
+                    <img src="/templates/img/i.png" alt="icon">
+                </a>
+            </div>
+            <div class="discord">
+                <a href="https://discord.com/">
+                    <img src="/templates/img/c.png" alt="icon">
+                </a>
+            </div>
+        </div>
+        <div class="authors">
+            <a href="#">MARKHABAT & AIDANA</a>
+        </div>
+        </div>
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+</body>
+</html>

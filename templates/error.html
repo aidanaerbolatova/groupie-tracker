@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>ERROR PAGE</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS v5.2.0-beta1 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"  integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <!-- -----------------------------------css------------ -->
+  <link rel="stylesheet" href="/templates/css/style.css">
+  <link rel="shortcut icon" href="/templates/img/itunes.ico" type="image/x-icon">
+</head>
+  <body>
+        <!-- ----------------------------NAVBAR----------------------------------- -->
+        <header>
+          <nav class="header navbar navbar-expand p-lg-5 ms-5 me-5"  >
+              <div class="container-fluid">
+              <img src="/templates/img/logo.png" id="navImg">
+              <a href="/" class="navbar-brand ps-lg-3"  >GROUPIE-TRACKER</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse">
+                  <ul class="navbar-nav ms-auto me-5";>
+                      <li class="nav-item"><a href="https://01.alem.school/" class="nav-link" >01</a></li>
+                      <li class="nav-item"><a href="https://01.alem.school/git/user/login" class="nav-link">Git</a></li>
+                      <li class="nav-item"><a href="https://github.com/" class="nav-link">Github</a></li>
+                  </ul>
+              </div>
+              </div>
+          </nav>
+      </header>
+      <div class="container">
+          <h1 class="my-lg-5 status">{{.Status}}</h1>
+          <div class="divider bg-dark error"></div>
+          <h3 class="m-lg-5 px-lg-3 message">{{.Message}}</h3>
+      </div>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+  </body>
+</html>
